@@ -91,13 +91,13 @@ function Create() {
 
   const handleLogin = (username, password) => {
     console.log('Logged in with username:', username, 'and password:', password);
-    localStorage.setItem('isLoggedIn', true);
+    // localStorage.setItem('isLoggedIn', true);
     setIsLoggedIn(true);
   };
 
   const handleSignup = ({ username, password, email, firstName, lastName }) => {
     console.log('Signed up with username:', username, 'password:', password, 'email:', email, 'firstName:', firstName, 'lastName:', lastName);
-    localStorage.setItem('isLoggedIn', true);
+    // localStorage.setItem('isLoggedIn', true);
     setIsLoggedIn(true);
   };
 
