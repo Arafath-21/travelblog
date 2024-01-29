@@ -90,6 +90,10 @@ function Create() {
   const navigate = useNavigate();
 
   const handleLogin = (username, password) => {
+    if (!username || !password) {
+      alert('Please fill in all required fields');
+      return;
+    }    
     console.log('Logged in with username:', username, 'and password:', password);
     localStorage.setItem('isLoggedIn', true);
     setIsLoggedIn(true);
@@ -131,53 +135,59 @@ function Create() {
 }
 
 function BlogForm({ onSubmit }) {
-  const [title, setTitle] = useState('');
+  const [Title, setTitle] = useState('');
+  const [Images, setImages] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ title, description, image, status: true });
+    if (!Title || !description || !Images) {
+      alert('Please fill in all required fields');
+      return;
+    }    
+    onSubmit({ Title, Images, description, status: true });
   };
 
-  return <>
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3">
-        <Form.Label>Title</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Description</Form.Label>
-        <Form.Control
-          as="textarea"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Image URL</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Image URL"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Create
-      </Button>
-    </Form>
-    <div className='preview-wrapper'>
-    <h3 className='text-center'>Preview</h3>
-      <BlogCard title={title} image={image} description={description}/>
-    </div>    
-    </>;
+  return (
+    <>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Title</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Title"
+            value={Title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            as="textarea"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Image URL</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Image URL"
+            value={Images}
+            onChange={(e) => setImages(e.target.value)}
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Create
+        </Button>
+      </Form>
+      <div className='preview-wrapper'>
+        <h3 className='text-center'>Preview</h3>
+        <BlogCard title={Title} image={Images} description={description}/>
+      </div>
+    </>
+  );
 }
 
 export default Create;

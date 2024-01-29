@@ -22,7 +22,7 @@ function IndividualBlogPost() {
         setEditedTitle(res.data.Title);
         setEditedContent(res.data.description);
         // Set image URL separately
-        setImageUrl(res.data.Image);
+        setImageUrl(res.data.Images);
         setCreated(res.data.createdAt);
       } catch (error) {
         console.log(error);

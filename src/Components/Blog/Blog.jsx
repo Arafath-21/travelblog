@@ -26,7 +26,7 @@ function Blog()  {
                 cupidatat non proident.
               </div>
               <div className="text-dark text-lg font-weight-bold mt-3">
-              <button className="btn btn-primary fw-bold" onClick={() => navigate('/blog-post')}>Read More</button>
+              <button className="btn btn-primary fw-bold" onClick={() => navigate('/admin-blog-post')}>Read More</button>
               </div>
             </div>
           </div>

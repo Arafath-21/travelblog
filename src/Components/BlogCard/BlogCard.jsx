@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
+
 function BlogCard({title,image,description}) {
   return <>
     <div class="card m-auto" style={{"width": "18rem"}}>

@@ -25,7 +25,7 @@ function Post() {
           <div className="col-md-4 mb-4" key={blog.id}>
             <div className="card">
               <img
-                src={blog.Image}
+                src={blog.Images}
                 className="card-img-top"
                 alt={blog.Title}
               />
