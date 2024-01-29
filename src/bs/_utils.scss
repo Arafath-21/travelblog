@@ -1,0 +1,27 @@
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.padding-inline{
+  padding-inline: 80px;
+}
+.author{
+    padding-top: 24px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;    
+
+    &--name{
+      color: #FFD050;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;        
+    }
+  }

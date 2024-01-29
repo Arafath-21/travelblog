@@ -1,0 +1,30 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap';// Import Bootstrap
+@import '../../../custom.scss';
+
+.joins{
+    width: 414px !important;
+    height: 256px;
+    text-align: center;
+    // padding: 128px;
+    margin: -98px 450px 128px 450px;
+    
+    &-headins{
+        color:#232536;
+        text-align: center;
+        font-family: Sen;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: -2px;        
+        padding-bottom: 16px;
+    }
+   
+    &-descriptios{
+        color:  #6D6E76;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;         
+        padding-bottom: 40px;
+    }
+}  

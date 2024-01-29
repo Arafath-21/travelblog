@@ -1,0 +1,26 @@
+.btn-primary {
+    background: #FFD050;
+    color: #232536;
+    display: inline-flex;
+    padding: 16px 48px;
+    align-items: flex-start;
+    gap: 12px;
+    border: none;
+  
+    &:hover {
+      background: #EDC14A;
+      color: #232536;
+    }
+  
+    &:active {
+      background-color: #EDC14A !important;
+      color: #232536 !important;
+      outline: none !important; 
+    }
+  
+    &:focus-visible {
+      outline: 2px solid #EDC14A !important;
+      outline-offset: 2px !important;
+    }
+  }
+  

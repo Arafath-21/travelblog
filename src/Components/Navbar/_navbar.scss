@@ -1,0 +1,40 @@
+// src/components/Navbar/_navbar.scss
+@import '../../../node_modules/bootstrap/scss/bootstrap';// Import Bootstrap
+@import '../../../custom.scss';
+
+.logo{
+  width: 50px;
+  height: 50px;
+  @include breakpoint-down(small){
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+}
+.navbar-nav{
+  font-size: 16px;
+  
+  font-weight: bolder;
+  @include breakpoint-down(small){
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    padding-right: 0;
+}
+  .nav-item{
+    .nav-link{
+      padding-inline-end: 5px;
+      &:hover{
+        border-bottom: 2px solid black;
+        @include breakpoint-down(small){
+          border-bottom: 1px solid none;
+      }
+      }
+    }
+  } 
+}
+button .navbar-toggler{
+  @include breakpoint-down(small){
+    font-size: 5px;
+}
+}

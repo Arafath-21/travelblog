@@ -1,0 +1,9 @@
+// custom.scss
+// Define your custom variables, mixins, functions, etc.
+@import './src/bs/button';
+@import './src/bs/responsive';
+@import './src/bs/utils';
+$primary-color: #232536;
+$secondary-color: #076a16;
+$primary :$primary-color;
+

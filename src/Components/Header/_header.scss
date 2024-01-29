@@ -1,0 +1,62 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap';// Import Bootstrap
+@import '../../../custom.scss';
+
+.hero{
+  &__img{
+    height: 700px;
+    background: url('https://images.unsplash.com/photo-1583144568008-76743354fa5a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat,
+    radial-gradient(80.99% 71.93% at 74.58% 0%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%);
+    opacity: 0.9;
+
+  }
+  &__contents{
+    position: absolute;
+    top: 128px;
+    left: 81px;
+    .blogname{
+      color: #FFF;
+      font-family: Inter ;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;  
+      
+      &--up{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;        
+      }
+    }
+
+    .title{
+      width: 803px;
+      padding-top: 24px;
+      color: #FFF;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 56px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: -2px;      
+    }
+    
+    .sub-title{
+      padding-top: 16px;
+      padding-bottom: 48px;
+      width: 599px;
+      color: #FFF;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;      
+    }
+  }
+}

@@ -1,0 +1,184 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap';// Import Bootstrap
+@import '../../../custom.scss';
+.wrp{
+    width: 624px;
+    height: 356px;
+    flex-shrink: 0;
+    background: #FFF;
+    padding: 64px;  
+    // margin-top: 80px;
+
+    .subhead{
+        color: #232536;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;   
+        padding-bottom: 16px;     
+    }
+    .head{
+        color: #232536;
+        font-family: Sen;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 64px;
+        letter-spacing: -2px;        
+    }
+}
+
+.abou-desc{
+    color: #4C4C4C;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;    
+    p{
+        padding-left: 32px;
+    }
+}
+
+.aboutImg{
+    position: relative;
+    
+    .counter-card{
+        width: 630px;
+        height: 156px;
+        flex-shrink: 0;    
+        position: absolute;
+        background-color: #FFD050;
+        padding: 32px;
+        top: 265px;
+        left: 109px;
+        .counts{
+            text-align: center;
+
+            .totalblog{
+                color:#232536;
+                font-family: Sen;
+                font-size: 56px;
+                font-weight: 700;
+                line-height: 64px;
+                letter-spacing: -2px;                
+            }
+
+            div{
+                color: #232536;
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 28px;               
+            }
+        }
+    }
+}
+
+.mis{  
+    background-color: #F4F0F8;
+    padding: 128px 149px 64px 108px;
+    margin-bottom: 120px;
+    &-heading{
+        color:  #232536;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;   
+        padding-bottom: 24px;     
+    }
+    &-descr{
+        color: #232536;
+        font-family: Sen;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -1px;   
+        padding-bottom: 16px;     
+    }
+    &-descr2{
+        color:  #6D6E76;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;        
+    }
+}
+
+.team{
+    margin-top: 128px;
+    
+    .teamhead{
+        color: #232536;
+        font-family: Sen;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: -2px;    
+        padding-bottom: 16px;   
+        padding-top: 82px; 
+    }
+
+    .teamdesccr{
+        color: #232536;
+        font-family: Sen;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        padding-bottom: 16px;
+    }
+    .teamdescr2{
+        color: #232536;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;     
+    }
+}
+
+
+.auth-head{
+    padding-top: 128px;
+    padding-bottom: 48px;
+}
+.authours{
+    text-align: center;  
+    
+    .auth{
+        width: 100%;
+        background: #F4F4F4;
+        padding: 20px;
+        margin-bottom: 20px;
+        &-name{
+            padding-top: 20px;
+            color:  #232536;
+            font-family: Sen;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 40px; 
+            letter-spacing: -1px;            
+        }
+        &-job{
+            color: #6D6E76;
+            text-align: center;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;   
+            padding-bottom: 20px;  
+        }
+        &-icons{
+            display: flex;
+            padding-bottom: 40px;;
+            gap: 16px;          
+        }
+    }
+}
+
+.auth.hovered {
+    background-color: #FBF6EA;
+  }
+

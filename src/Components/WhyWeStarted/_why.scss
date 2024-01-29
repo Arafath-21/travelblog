@@ -1,0 +1,58 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap';// Import Bootstrap
+@import '../../../custom.scss';
+
+.imgWrapper {
+    width: 1280px;
+    height: 705px;
+    flex-shrink: 0;
+    position: relative;
+
+    &__groupimg {
+        img {
+            width: 949px;
+            height: 705px;
+        }
+    }
+
+    &__contents {
+        width: 716px;
+        height: 584px;
+        position: absolute;
+        top: 121px;
+        left: 574px;
+        background-color: white;
+        padding: 80px;
+
+        &-theme{
+            color: #232536;
+            padding-bottom: 24px;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;            
+        }
+        &-heading{
+            width: 546px;
+            color: #232536;
+            font-family: Sen;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 64px;
+            letter-spacing: -2px;      
+            padding-bottom: 16px;               
+        }
+        &-descrip{
+            width: 546px;
+            color: #6D6E76;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;     
+            padding-bottom: 16px;     
+        }
+    }
+}

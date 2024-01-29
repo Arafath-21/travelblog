@@ -1,0 +1,207 @@
+1. delete index.scss
+2. remove index.scss from main.jsx
+3. rename app.css to app.scss
+4. outside the src create custom.scss
+
+API KEY : zkUaNhYoItV7VErNQgJfF4bfRmAbm4qMLXJtzn4m0gJNf4WtyDCE0RJy
+
+Certainly! Let's go through the complete process step by step for setting up a React project with SCSS/Sass, Bootstrap, and two components (`Header.jsx` and `Navbar.jsx`). We'll include the correct folder structure, configurations, and keep the `custom.scss` file outside the `src` folder.
+
+**Step 1: Create a new React project with Vite**
+
+```bash
+npx create-vite my-react-scss-bootstrap-project --template react
+cd my-react-scss-bootstrap-project
+```
+
+**Step 2: Install Bootstrap, Sass, and Popper.js**
+
+```bash
+npm install bootstrap@5.3.0 sass @popperjs/core
+```
+
+**Step 3: Folder Structure**
+
+Create the following folder structure:
+
+```plaintext
+my-react-scss-bootstrap-project
+|-- src
+|   |-- components
+|       |-- Header
+|           |-- Header.jsx
+|           |-- _header.scss
+|       |-- Navbar
+|           |-- Navbar.jsx
+|           |-- _navbar.scss
+|   |-- App.jsx
+|   |-- App.scss
+|   |-- main.jsx
+|-- custom.scss
+|-- ...
+```
+
+**Step 4: Create Components**
+
+Create `Header.jsx` in `src/components/Header`:
+
+```jsx
+// src/components/Header/Header.jsx
+import React from 'react';
+import './_header.scss';
+
+const Header = () => {
+  return (
+    <header>
+      <h1>Header</h1>
+    </header>
+  );
+};
+
+export default Header;
+```
+
+Create `Navbar.jsx` in `src/components/Navbar`:
+
+```jsx
+// src/components/Navbar/Navbar.jsx
+import React from 'react';
+import './_navbar.scss';
+
+const Navbar = () => {
+  return (
+    <nav className="navbar">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">
+          Navbar
+        </a>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+```
+
+**Step 5: SCSS Styles and Bootstrap Customization**
+
+Create `_header.scss` in `src/components/Header`:
+
+```scss
+// src/components/Header/_header.scss
+@import '../../custom.scss';
+@import '~bootstrap/scss/bootstrap'; // Import Bootstrap
+
+header {
+  background-color: $primary-color; // Using the custom variable
+  padding: 20px;
+  text-align: center;
+
+  // Using a custom mixin
+  @include custom-border-radius(10px);
+}
+```
+
+Create `_navbar.scss` in `src/components/Navbar`:
+
+```scss
+// src/components/Navbar/_navbar.scss
+@import '../../custom.scss';
+@import '~bootstrap/scss/bootstrap'; // Import Bootstrap
+
+.navbar {
+  background-color: $secondary-color; // Using a custom variable
+  // Customize other styles as needed
+}
+```
+
+**Step 6: Create Custom SCSS File**
+
+Create `custom.scss` in the root directory:
+
+```scss
+// custom.scss
+// Define your custom variables, mixins, functions, etc.
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+// Custom mixin
+@mixin custom-border-radius($radius) {
+  border-radius: $radius;
+}
+
+// Custom function
+@function calculate-width($width) {
+  @return $width * 2;
+}
+```
+
+**Step 7: Create Custom SCSS File**
+
+In `main.jsx`:
+
+```jsx
+// src/main.jsx
+import { createApp } from 'vue'; // Assuming Vue.js is used in the template, adjust accordingly
+import App from './App'; // Adjust for React, if needed
+
+createApp(App).mount('#app');
+```
+
+**Step 8: Import Custom Styles in App.jsx**
+
+```jsx
+// src/App.jsx
+import React from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Header from './components/Header/Header';
+import './App.scss';
+
+const App = () => {
+  return (
+    <div>
+      <Navbar />
+      <Header />
+    </div>
+  );
+};
+
+export default App;
+```
+
+**Step 9: Run the Application**
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:3000` in your browser to see your React application with Bootstrap, SCSS/Sass, and the customized styles for `Header` and `Navbar`.
+
+I hope this comprehensive guide is clear and helpful. If you have any more questions or need further clarification, feel free to ask!
+
+
+ (
+    <div className="container">
+      <div className="h1 fw-bolder text-center mt-5">Contact Us</div>
+      <div className="row d-flex justify-content-center align-items-center mt-5">
+        <div className="col-md-6">
+              <form>
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label">Name</label>
+                  <input type="text" className="form-control" id="name" />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">Email address</label>
+                  <input type="email" className="form-control" id="email" />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="message" className="form-label">Message</label>
+                  <textarea className="form-control" id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
+  );
