@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import manInlaptop from '../../assets/manInlaptop.png'
+import manInlaptop from '../../assets/manInlaptop.png';
 
 function Blog()  {
 
