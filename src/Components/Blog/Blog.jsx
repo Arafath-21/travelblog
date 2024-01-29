@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import manInlaptop from '../../assets/manInlaptop.png';
+import man from '../../assets/man.png';
 
 function Blog()  {
 
@@ -32,7 +32,7 @@ function Blog()  {
           </div>
           <div className="col-md-6">
             <img
-              src={manInlaptop}
+              src={man}
               className="img-fluid w-100 h-auto my-auto"
               alt="Featured Post"
             />
