@@ -4,8 +4,8 @@
 .hero{
   &__img{
     height: 700px;
-    background: url('https://images.unsplash.com/photo-1583144568008-76743354fa5a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat,
-    radial-gradient(80.99% 71.93% at 74.58% 0%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%);
+    // width: 1420px;
+    background: center/cover no-repeat,radial-gradient(80.99% 71.93% at 74.58% 0%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%);
     opacity: 0.9;
 
   }

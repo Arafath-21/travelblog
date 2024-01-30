@@ -1,14 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-
-function Subscribe(props) {
-    const navigate = useNavigate();
-
-    const handlesubmit = (e)=>{
-        e.preventDefault();
-        alert (`subscribed`)
-        navigate('/')
-    }
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+function Subscribe() {
+  const handlesubmit = (e)=>{
+    e.preventDefault(); // Prevent default form submission
+    toast.success("Subscribed"); // Display toast message
+}
   return (
     <form className="container bg-white px-5 py-4">
       <div className="row">
@@ -31,16 +28,13 @@ function Subscribe(props) {
                   aria-label="Email"
                   placeholder="Enter Your Email"
                   style={{width:'272px'}}
+                  required
                 />
               </div>
             </div>
             <div className="col-md-4">
-              <button
-                className="btn btn-primary text-dark text-lg fw-bold py-2 px-3 w-100 text-center"
-                onClick={handlesubmit}
-              >
-                Subscribe
-              </button>
+              <button className="btn btn-primary text-dark text-lg fw-bold py-2 px-3 w-100 text-center" onClick={handlesubmit}>Subscribe</button>
+            <ToastContainer />
             </div>
           </div>
         </div>

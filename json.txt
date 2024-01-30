@@ -1,0 +1,175 @@
+[
+  {
+    "id": 1,
+    "home": {
+      "teamMembers": [
+        {
+          "id": 1,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a1.png?alt=media&token=8ecfd230-52a4-484f-aaa1-007e155a4e2f",
+          "name": "Floyd Miles",
+          "job": "Content Writer @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_1",
+            "twitter": "TWITTER_URL_1",
+            "instagram": "INSTAGRAM_URL_1",
+            "linkedin": "LINKEDIN_URL_1"
+          }
+        },
+        {
+          "id": 2,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a2.png?alt=media&token=9f8166a5-1b4a-4257-8c93-8009a519bb18",
+          "name": "John Doe",
+          "job": "Designer @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_2",
+            "twitter": "TWITTER_URL_2",
+            "instagram": "INSTAGRAM_URL_2",
+            "linkedin": "LINKEDIN_URL_2"
+          }
+        },
+        {
+          "id": 3,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a3.png?alt=media&token=9363b471-9750-45b3-a889-6df40927d21c",
+          "name": "Jane Smith",
+          "job": "Developer @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_3",
+            "twitter": "TWITTER_URL_3",
+            "instagram": "INSTAGRAM_URL_3",
+            "linkedin": "LINKEDIN_URL_3"
+          }
+        },
+        {
+          "id": 4,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a4.png?alt=media&token=ee816e2c-7a82-4bd7-9805-f70544890043",
+          "name": "Alice Johnson",
+          "job": "Marketing Manager @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_4",
+            "twitter": "TWITTER_URL_4",
+            "instagram": "INSTAGRAM_URL_4",
+            "linkedin": "LINKEDIN_URL_4"
+          }
+        },
+        {
+          "id": 5,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a5.png?alt=media&token=bc630d70-05f1-42b7-ac2b-978c2da5de92",
+          "name": "Alice Johnson",
+          "job": "Marketing Manager @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_4",
+            "twitter": "TWITTER_URL_4",
+            "instagram": "INSTAGRAM_URL_4",
+            "linkedin": "LINKEDIN_URL_4"
+          }
+        },
+        {
+          "id": 6,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a6.png?alt=media&token=85feb14e-b262-4b21-9f83-d625a217efd8",
+          "name": "Alice Johnson",
+          "job": "Marketing Manager @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_4",
+            "twitter": "TWITTER_URL_4",
+            "instagram": "INSTAGRAM_URL_4",
+            "linkedin": "LINKEDIN_URL_4"
+          }
+        },
+        {
+          "id": 7,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a7.png?alt=media&token=1093eecd-709c-49ae-95d8-5b3c9c262302",
+          "name": "Alice Johnson",
+          "job": "Marketing Manager @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_4",
+            "twitter": "TWITTER_URL_4",
+            "instagram": "INSTAGRAM_URL_4",
+            "linkedin": "LINKEDIN_URL_4"
+          }
+        },
+        {
+          "id": 8,
+          "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/a8.png?alt=media&token=13dc1b5e-d729-4e74-a047-02021e1824c9",
+          "name": "Alice Johnson",
+          "job": "Marketing Manager @Company",
+          "socialMedia": {
+            "facebook": "FACEBOOK_URL_4",
+            "twitter": "TWITTER_URL_4",
+            "instagram": "INSTAGRAM_URL_4",
+            "linkedin": "LINKEDIN_URL_4"
+          }
+        }
+      ]
+    },
+    "about": {
+      "subheading": "About Us",
+      "heading": "We are a community of content writers who share their learnings",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/grpImg.png?alt=media&token=6c42d39b-23d9-4833-a36f-ca8f31e7124e",
+      "blog": "Blogs Published",
+      "views": "Views on Finsweet",
+      "users": "Total active Users"
+    },
+    "mission": {
+      "subheading": "Mission",
+      "heading": "Creating valuable content for creatives all around the world",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "vision": {
+      "subheading": "OUR VISION",
+      "heading": "A platform that empowers individuals to improve",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus."
+    },
+    "started": {
+      "subheading": "WHY WE STARTED",
+      "heading": "It started out as a simple idea and evolved into our passion",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/grop.png?alt=media&token=cbb5f71d-5bff-46d6-950d-8095751d914c"
+    },
+    "hero": {
+      "heroImageURL": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/hero-img.jpg?alt=media&token=c7f385c1-6b99-4a9b-87d4-d716cc78d658",
+      "blogName": "blog",
+      "title": "Step-by-step guide to choosing great Destination",
+      "author": "James West",
+      "date": "May 23, 2022",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+    },
+    "team": {
+      "teamData": [
+        {
+          "heading": "Our team of creatives",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+          "description2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
+          "imageSrc": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/team2.png?alt=media&token=c6649858-a5b5-4b06-a59b-c9e2082abc94",
+          "order": "order-lg-1 order-md-1 order-sm-1",
+          "order2": "order-lg-2 order-md-2 order-sm-2"
+        },
+        {
+          "heading": "Why we started this Blog",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+          "description2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
+          "imageSrc": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/team1.png?alt=media&token=44a06b57-e9e9-447c-8b05-8b7f7e883d9b",
+          "order": "order-lg-2 order-md-2 order-sm-2",
+          "order2": "order-lg-1 order-md-1 order-sm-1"
+        }
+      ]
+    },
+    "navbar": {
+      "logo": "https://firebasestorage.googleapis.com/v0/b/travel-blog-55296.appspot.com/o/logo.jpg?alt=media&token=ffd7df86-5a8b-40aa-a96d-ba09b0494b78",
+      "brand": "VoyageVibes",
+      "home": "Home",
+      "blog": "Blog",
+      "contact": "Contact Us",
+      "aboutUs": "About Us",
+      "create": "Create Blog",
+      "pic": "Photos"
+    }
+  },
+  {
+    "id": 2,
+    "home": "Home 2"
+  }
+]
+
+
+-- images are loaded in firebase console

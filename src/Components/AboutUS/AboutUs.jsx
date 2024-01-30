@@ -1,91 +1,44 @@
 import React,{useState,useEffect} from 'react'
+import axios from 'axios'
 import './_about.scss'
-import grpImg from '../../assets/grpImg.png'
-import team1 from '../../assets/team1.png'
-import team2 from '../../assets/team2.png'
-import a1 from '../../assets/a1.png'
-import a2 from '../../assets/a2.png'
-import a3 from '../../assets/a3.png'
-import a4 from '../../assets/a4.png'
-import a5 from '../../assets/a5.png'
-import a6 from '../../assets/a6.png'
-import a7 from '../../assets/a7.png'
-import a8 from '../../assets/a8.png'
 import Join from '../Join/Join'
 
-const teamData = [
-  {
-    heading: "Our team of creatives",
-    description1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-    description2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
-    imageSrc: team1,
-    order:"order-lg-1",
-    order2:"order-lg-2"
-  },
-  {
-    heading: "Why we started this Blog",
-    description1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-    description2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
-    imageSrc: team2,
-    order:"order-lg-2",
-    order2:"order-lg-1"
-  }
-];
-
-const teamDetails = [
-  {
-    img: a1,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-  {
-    img: a2,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-  {
-    img: a8,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-  {
-    img: a3,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-  {
-    img: a4,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-  {
-    img: a5,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-  {
-    img: a6,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-  {
-    img: a7,
-    name:'Floyd Miles',
-    job:'Content Writer @Company'
-  },
-]
-
-
-
 const AboutUs = () => {
-
+  const [teamDetails, setTeamDetails] = useState([]);
+  const [teamData, setteamData] = useState([]);
+  const [aboutData, setAboutData] = useState({});
+  const [missionData, setMissionData] = useState({});
+  const [visionData, setVisionData] = useState({});
   const [blogCount, setBlogCount] = useState(0);
   const [viewsCount, setViewsCount] = useState(0);
   const [usersCount, setUsersCount] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      setTeamDetails(response.data[0].home.teamMembers);
+      
+      const teamResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      setteamData(teamResponse.data[0].team.teamData);
+
+      const aboutResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      setAboutData(aboutResponse.data[0].about);
+
+      const visionResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      setVisionData(visionResponse.data[0].vision);
+      
+      const missionResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      setMissionData(missionResponse.data[0].mission);
+
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
     
+    fetchData()
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
     const animateNumbers = (targetValue, setFunction) => {
       let currentValue = 0;
@@ -121,32 +74,36 @@ const AboutUs = () => {
 
   return <>
   <div className="container">
-    <div className="row">
-      <div className="col-lg-5 col-md-5 col-sm-5 ">
-        <div className="wrp">
-          <div className="subhead">About us</div>
-          <div className="head h1">We are a team of content writers who share their learnings</div>
+  <div>
+      {aboutData && (
+        <div className="row">
+          <div className="col-lg-4 col-md-4 col-sm-4">
+            <div className="wrp">
+              <div className="subhead">{aboutData.subheading}</div>
+              <div className="head h1">{aboutData.heading}</div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-6 offset-2 d-flex justify-content-center align-items-center abou-desc h3">
+            <p>{aboutData.description}</p>
+          </div>
         </div>
-      </div>
-      <div className="col-lg-5 col-md-5 col-sm-5 offset-2 d-flex justify-content-center align-items-center abou-desc">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
+      )}
     </div>
     <div className="row">
       <div className="col-lg-12 col-md-12 col-sm-12">
-        <div className="aboutImg"><img src={grpImg} alt="" className='w-100' />
+        <div className="aboutImg"><img src={aboutData.imgUrl} alt="" className='w-100' />
           <div className='d-flex justify-content-evenly align-items-center counter-card'>
             <div className="counts text-center" >
               <div className="totalblog">{blogCount}+</div>
-              <div>Blogs Published</div>
+              <div>{aboutData.blog}</div>
             </div>
             <div className="counts text-center">
               <div className="totalblog">{viewsCount}k+</div>
-              <div>Views on Finsweet</div>
+              <div>{aboutData.views}</div>
             </div>
             <div className="counts text-center">
               <div className="totalblog">{usersCount}k+</div>
-              <div>Total active Users</div>
+              <div>{aboutData.users}</div>
             </div>
           </div>
         </div>
@@ -154,14 +111,14 @@ const AboutUs = () => {
     </div>
     <div className="row">
       <div className="col-md-6 col-lg-6 col-sm-6 mis">
-        <div className="mis-heading">Our mision</div>
-        <div className="mis-descr">Creating valuable content for creatives all around the world</div>  
-        <div className="mis-descr2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.</div>
+        <div className="mis-heading">{missionData.subheading}</div>
+        <div className="mis-descr">{missionData.heading}</div>  
+        <div className="mis-descr2">{missionData.description}</div>
       </div>
       <div className="col-md-6 col-lg-6 col-sm-6  mis">
-      <div className="mis-heading">Our Vision</div>
-        <div className="mis-descr">A platform that empowers individuals to improve</div>  
-        <div className="mis-descr2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.</div>        
+      <div className="mis-heading">{visionData.subheading}</div>
+        <div className="mis-descr">{visionData.heading}</div>  
+        <div className="mis-descr2">{visionData.description}</div>        
       </div>
     </div>
     {
@@ -174,7 +131,7 @@ const AboutUs = () => {
                 <div className="teamdescr2">{e.description2}</div>
               </div>
               <div className={`col-md-6 ${e.order2} col-lg-6 col-sm-6 team`}>
-                <img src={e.imageSrc} alt="" />
+                <img src={e.imageSrc} className='img-fluid' alt="" />
               </div>
             </div>        
         </>
@@ -187,7 +144,7 @@ const AboutUs = () => {
               return <>
                 <div className={`col-lg-3 col-md-3 col-sm-3 authours`} key={i}>
                   <div className={`auth ${hoveredIndex === i ? 'hovered' : ''}`} onMouseOver={()=>handleMouseOver(i)}>
-                      <div className="auth-img"><img src={e.img} alt="" /></div>
+                      <div className="auth-img"><img src={e.imgUrl} alt="" /></div>
                       <div className="auth-name">{e.name}</div>
                       <div className="auth-job">{e.job}</div>
                       <ul className="auth-icons d-flex justify-content-center align-items-center">
@@ -208,5 +165,4 @@ const AboutUs = () => {
 }
 
 export default AboutUs
-
 
