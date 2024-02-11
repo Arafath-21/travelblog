@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
@@ -35,6 +36,7 @@ const App = () => {
       <Subscribe />
       <Footer />
   </BrowserRouter>  
+  <ToastContainer />
   </>
 };
 

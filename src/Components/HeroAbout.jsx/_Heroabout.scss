@@ -8,13 +8,18 @@
     background-color: #F4F0F8;
     padding: 80px;
     flex-wrap: wrap;
+
+    @include breakpoint-down(medium){
+      padding-bottom: 0;
+      padding: 35px;
+    }
   
     &__about,
     &__mission {
-      width: 100%; // Make both sections take full width on small screens
-      max-width: 515px; // Set maximum width for larger screens
-      padding: 0 20px; // Add some horizontal padding for smaller screens
-      box-sizing: border-box; // Include padding in the width calculation       
+      width: 100%; 
+      max-width: 515px; 
+      padding: 0 20px; 
+      box-sizing: border-box;
         &-subheading{
             color: #232536;
             font-family: Inter;
@@ -41,6 +46,9 @@
             font-weight: 400;
             line-height: 28px;    
             padding-bottom: 16px;     
+            @include breakpoint-down(medium){
+              padding-bottom: 0;
+            }
         }
     
     }

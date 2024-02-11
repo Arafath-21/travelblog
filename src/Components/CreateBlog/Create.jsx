@@ -6,6 +6,7 @@ import axios from 'axios';
 import { API_URL } from '../../App';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LoginSignup({ onLogin, onSignup, isSignup, onToggleSignup }) {
   const [password, setPassword] = useState('');
@@ -51,32 +52,32 @@ function LoginSignup({ onLogin, onSignup, isSignup, onToggleSignup }) {
           <>
             <Form.Group className="mb-3">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter first name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+              <Form.Control type="text" placeholder="Enter first name" value={firstName} onChange={(e) => setFirstName(e.target.value)} required/>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter last name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+              <Form.Control type="text" placeholder="Enter last name" value={lastName} onChange={(e) => setLastName(e.target.value)} required/>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </Form.Group>
           </>
         )}
         {!isSignup && (
           <Form.Group className="mb-3">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Form.Control type="text" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
           </Form.Group>
         )}
         <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Form.Control type="password" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
         </Form.Group>
         {isSignup && (
           <Form.Group className="mb-3">
             <Form.Label>Confirm Password</Form.Label>
-            <Form.Control type="password" placeholder="Confirm password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+            <Form.Control type="password" placeholder="Confirm password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
           </Form.Group>
         )}
         <Button variant="primary" type="submit">
@@ -118,23 +119,24 @@ function Create() {
   };
   
 
-  const handleBlogSignUp = ({ password, email, firstName, lastName }) => {
-    console.log( 'password:', password, 'email:', email, 'firstName:', firstName, 'lastName:', lastName);
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('email',email)
-    localStorage.setItem('password',password)
-    localStorage.setItem('firstName',firstName)
-    setIsSignup(!isSignup);
-  };
+const handleBlogSignUp = ({ password, email, firstName, lastName }) => {
+  console.log( 'password:', password, 'email:', email, 'firstName:', firstName, 'lastName:', lastName);
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('email',email)
+  localStorage.setItem('password',password)
+  localStorage.setItem('firstName',firstName)
+  setIsSignup(!isSignup);
+};
+
 
   const handleCreateBlog = async (formData) => {
     try {
       const res = await axios.post(API_URL, formData);
       if (res.status === 201) {
-        alert('Blog Created Successfully');
         navigate('/blog-post');
         // localStorage.setItem('isLoggedIn','false')
       }
+      toast.info('Blog Created Successfully');
     } catch (error) {
       console.log(error);
     }
@@ -211,7 +213,7 @@ function BlogForm({ onSubmit }) {
           <option value=""></option>
           <option value="solo">solo</option>
           <option value="group">group</option>
-          <option value="couples">couple</option>
+          <option value="couple">couple</option>
         </Form.Select>
       </Form.Group>
         <Button variant="primary" type="submit">

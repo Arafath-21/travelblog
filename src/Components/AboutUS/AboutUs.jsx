@@ -114,7 +114,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row p-0 m-0">
         <div className="col-md-6 col-lg-6 col-sm-6 mis">
           <div className="mis-heading">{missionData.subheading}</div>
           <div className="mis-descr">{missionData.heading}</div>  

@@ -6,8 +6,9 @@
     padding-top: 128px;
     padding-bottom: 48px;
 
-    @include breakpoint-down(small){
+    @include breakpoint-down(medium){
         width: auto;
+        padding-top: 228px !important;
     }
 }
 .authours{
@@ -18,7 +19,7 @@
         background: #F4F4F4;
         padding: 20px;
         margin-bottom: 20px;
-        @include breakpoint-down(small){
+        @include breakpoint-down(medium){
             width: auto;
             padding: 10px;
             margin-bottom: 10px;
@@ -31,7 +32,7 @@
             font-weight: 700;
             line-height: 40px; 
             letter-spacing: -1px;      
-            @include breakpoint-down(small){
+            @include breakpoint-down(medium){
                 padding-top: 10px;
                 font-size: 18px;
                 line-height: 20px;
@@ -51,7 +52,7 @@
             display: flex;
             padding-bottom: 40px;;
             gap: 16px;      
-            @include breakpoint-down(small){
+            @include breakpoint-down(medium){
                 padding-bottom: 10px;
             }    
         }

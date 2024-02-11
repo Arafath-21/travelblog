@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate ,useParams } from "react-router-dom";
 import axios from 'axios';
-import { toast } from "react-toastify";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function IndividualBlogPost() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function IndividualBlogPost() {
       await axios.put(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`, updatedPost);
       setBlogPost(updatedPost);
       setEditMode(false);
-      alert('Item edited successfully!');
+      toast.info('Item edited successfully!');
       navigate('/blog-post')
     } catch (error) {
       console.log(error);
@@ -57,7 +58,7 @@ function IndividualBlogPost() {
       if (confirmDelete) {
         await axios.delete(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`);
         // Assuming successful deletion, navigate back to the blog list
-        alert('post deleted')
+        toast.warning('post deleted')
         navigate('/blog-post');
       }
     } catch (error) {

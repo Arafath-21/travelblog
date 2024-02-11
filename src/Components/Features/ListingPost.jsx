@@ -32,9 +32,17 @@ const ListingPost = () => {
      autoplaySpeed: 2000,
    };
 
+   // Custom settings for medium screens
+   const mediumScreenSettings = {
+     ...settings,
+     slidesToShow: 2,
+     slidesToScroll: 1,
+   };
+
    return (
      <div className="container list-post-container">
-       <Slider {...settings}>
+        <div className="h1 text-center fw-bolder">Other Blogs</div>
+       <Slider {...(window.innerWidth <= 768 ? mediumScreenSettings : settings)}>
          {listDetails.map((post, index) => (
            <Link to={`/admin-blog-post/${post.id}`} key={index} className="listing-post">
              <div className="author" style={{color:'black'}}>By <span className="author--name">{post.name}</span>{post.data}</div>
