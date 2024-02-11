@@ -136,7 +136,7 @@ const handleBlogSignUp = ({ password, email, firstName, lastName }) => {
         navigate('/blog-post');
         // localStorage.setItem('isLoggedIn','false')
       }
-      toast.info('Blog Created Successfully');
+      // toast.info('Blog Created Successfully');
     } catch (error) {
       console.log(error);
     }

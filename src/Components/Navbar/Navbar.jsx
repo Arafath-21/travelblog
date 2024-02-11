@@ -21,8 +21,8 @@ const Navbar = () => {
     fetchData();
   },[])
 
-  const handleSubscribe = () => {
-    toast.success("Subscribed");
+  const handleLogin = () => {
+    navigate('/create-blog')
   };  
   return <>
 <nav className="navbar navbar-expand-lg shadow">
@@ -53,7 +53,7 @@ const Navbar = () => {
         </li>
       </ul>
         <div>
-        <button className="btn btn-primary fw-bold" onClick={handleSubscribe}>Subscribe</button>
+        <button className="btn btn-primary fw-bold" onClick={handleLogin}>Login</button>
         <ToastContainer />
         </div>
     </div>

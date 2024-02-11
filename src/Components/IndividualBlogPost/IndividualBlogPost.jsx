@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate ,useParams } from "react-router-dom";
 import axios from 'axios';
-import { ToastContainer,toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 function IndividualBlogPost() {
   const navigate = useNavigate();
@@ -44,7 +43,6 @@ function IndividualBlogPost() {
       await axios.put(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`, updatedPost);
       setBlogPost(updatedPost);
       setEditMode(false);
-      toast.info('Item edited successfully!');
       navigate('/blog-post')
     } catch (error) {
       console.log(error);
@@ -57,8 +55,7 @@ function IndividualBlogPost() {
       const confirmDelete = window.confirm("Are you sure you want to delete this blog post?");
       if (confirmDelete) {
         await axios.delete(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`);
-        // Assuming successful deletion, navigate back to the blog list
-        toast.warning('post deleted')
+        // Assuming successful deletion, navigate back to the blog list=
         navigate('/blog-post');
       }
     } catch (error) {
@@ -91,6 +88,7 @@ function IndividualBlogPost() {
                 />
                 <p className="text-muted">Created On {created}</p>
                 <button className="btn btn-primary mb-3" onClick={handleSave}>Save</button>
+
                 <div className="h6 text-muted">Please save after the changes</div>
               </div>
               </> : (
