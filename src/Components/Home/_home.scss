@@ -5,6 +5,10 @@
 .auth-head{
     padding-top: 128px;
     padding-bottom: 48px;
+
+    @include breakpoint-down(small){
+        width: auto;
+    }
 }
 .authours{
     text-align: center;  
@@ -14,6 +18,11 @@
         background: #F4F4F4;
         padding: 20px;
         margin-bottom: 20px;
+        @include breakpoint-down(small){
+            width: auto;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
         &-name{
             padding-top: 20px;
             color:  #232536;
@@ -21,7 +30,12 @@
             font-size: 28px;
             font-weight: 700;
             line-height: 40px; 
-            letter-spacing: -1px;            
+            letter-spacing: -1px;      
+            @include breakpoint-down(small){
+                padding-top: 10px;
+                font-size: 18px;
+                line-height: 20px;
+            }      
         }
         &-job{
             color: #6D6E76;
@@ -36,7 +50,10 @@
         &-icons{
             display: flex;
             padding-bottom: 40px;;
-            gap: 16px;          
+            gap: 16px;      
+            @include breakpoint-down(small){
+                padding-bottom: 10px;
+            }    
         }
     }
 }

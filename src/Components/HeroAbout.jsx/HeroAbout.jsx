@@ -2,20 +2,21 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './_Heroabout.scss';
 import { useNavigate } from 'react-router-dom';
+import { API_URL2 } from '../../App';
 
 const HeroAbout = () => {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(API_URL2);
+      setData(response.data[0]);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
-        setData(response.data[0]);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
 
     fetchData();
   }, []);

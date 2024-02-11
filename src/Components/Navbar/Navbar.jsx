@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import logo from '../../assets/logo.jpg'
 import './_navbar.scss';
 
 const Navbar = () => {

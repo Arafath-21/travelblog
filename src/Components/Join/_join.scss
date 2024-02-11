@@ -7,7 +7,9 @@
     text-align: center;
     // padding: 128px;
     margin: -98px 450px 128px 450px;
-    
+    @include breakpoint-down(small){
+        margin: 0;
+    }
     &-headins{
         color:#232536;
         text-align: center;

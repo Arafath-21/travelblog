@@ -6,13 +6,16 @@
     height: 700px;
     // width: 1420px;
     background: center/cover no-repeat,radial-gradient(80.99% 71.93% at 74.58% 0%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%);
-    opacity: 0.9;
-
+    opacity: 0.8;
   }
   &__contents{
     position: absolute;
     top: 128px;
     left: 81px;
+    @include breakpoint-down(medium){
+      top: 128px;
+      left: 51px;
+    }
     .blogname{
       color: #FFF;
       font-family: Inter ;
@@ -22,6 +25,12 @@
       line-height: 20px;
       letter-spacing: 3px;
       text-transform: uppercase;  
+
+      @include breakpoint-down(small){
+        font-size: 12px;
+        font-weight: normal;
+        color: black;
+      }
       
       &--up{
         color: #FFF;
@@ -31,7 +40,12 @@
         font-weight: 900;
         line-height: 20px;
         letter-spacing: 3px;
-        text-transform: uppercase;        
+        text-transform: uppercase;    
+        
+        @include breakpoint-down(small){
+          font-size: 12px;
+          font-weight: normal;
+        }
       }
     }
 
@@ -44,7 +58,14 @@
       font-style: normal;
       font-weight: 700;
       line-height: 64px;
-      letter-spacing: -2px;      
+      letter-spacing: -2px;   
+      
+      @include breakpoint-down(small){
+        font-size: 18px;
+        letter-spacing: normal;
+        padding-top: 12px;
+        width: auto;
+      }
     }
     
     .sub-title{
@@ -57,6 +78,13 @@
       font-style: normal;
       font-weight: 400;
       line-height: 28px;      
+
+      @include breakpoint-down(small){
+        font-size: 18px;
+        letter-spacing: normal;
+        padding-top: 8px;
+        width: auto;
+      }
     }
   }
 }

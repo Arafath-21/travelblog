@@ -1,20 +1,20 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap';// Import Bootstrap
 @import '../../../custom.scss';
 
-.wrappers{
+.wrappers {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #F4F0F8;
     padding: 80px;
     flex-wrap: wrap;
-
-     
-
-    &__about{
-        width: 515px;
-        height: 308px;
-        flex-shrink: 0;        
+  
+    &__about,
+    &__mission {
+      width: 100%; // Make both sections take full width on small screens
+      max-width: 515px; // Set maximum width for larger screens
+      padding: 0 20px; // Add some horizontal padding for smaller screens
+      box-sizing: border-box; // Include padding in the width calculation       
         &-subheading{
             color: #232536;
             font-family: Inter;
@@ -44,38 +44,22 @@
         }
     
     }
-    &__mission{
-        width: 515px;
-        height: 308px;
-        
-        &-subheading{
-            color: #232536;
-            font-family: Inter;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 20px;
-            letter-spacing: 3px;
-            text-transform: uppercase;    
-            padding-bottom: 24px;              
+    @include breakpoint('medium') {
+        padding: 80px 40px; // Increase padding for medium-sized screens
+      }
+    
+      @include breakpoint('large') {
+        padding: 80px 60px; // Increase padding for large-sized screens
+      }
+    
+      @include breakpoint('xlarge') {
+        padding: 80px 80px; // Increase padding for extra-large-sized screens
+      }
+    
+      @include breakpoint-down('medium') {
+        .wrappers__about,
+        .wrappers__mission {
+          padding: 0; // Remove padding for small screens
         }
-
-        &-heading{
-            color: #232536;
-            font-family: Sen;
-            font-size: 28px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 40px;
-            letter-spacing: -1px;      
-            padding-bottom: 16px;      
-        }
-        &-desc{
-            color: #6D6E76;
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 28px;            
-        }
+      }
     }
-}

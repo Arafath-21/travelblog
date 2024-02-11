@@ -13,6 +13,7 @@ import Post from './Components/Post/Post';
 import IndividualBlogPost from './Components/IndividualBlogPost/IndividualBlogPost';
 import AdminBlog from './Components/AdminBlog/AdminBlog';
 export const API_URL = 'https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog'
+export const API_URL2 = 'https://65927f02bb129707198fc4b4.mockapi.io/Dynamic'
 import './App.scss';
 
 const App = () => {

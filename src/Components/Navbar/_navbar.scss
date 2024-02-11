@@ -2,39 +2,60 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap';// Import Bootstrap
 @import '../../../custom.scss';
 
-.logo{
+// Logo size adjustments for mediumer screens
+.logo {
   width: 50px;
   height: 50px;
-  @include breakpoint-down(small){
+
+  @include breakpoint-down(medium) {
     width: 30px;
     height: 30px;
-    color: white;
+
+    .h1{
+      font-size: 160px;
+    }
+  }
 }
-}
-.navbar-nav{
+
+// Navbar adjustments for mediumer screens
+.navbar-nav {
   font-size: 16px;
-  
   font-weight: bolder;
-  @include breakpoint-down(small){
+  display: flex; /* Ensure the navbar links are displayed in a row */
+  align-items: center; /* Center the items vertically */
+  
+  @include breakpoint-down(medium) {
     padding: 0;
     margin: 0;
-    font-size: 12px;
-    padding-right: 0;
-}
-  .nav-item{
-    .nav-link{
-      padding-inline-end: 5px;
-      &:hover{
-        border-bottom: 2px solid black;
-        @include breakpoint-down(small){
-          border-bottom: 1px solid none;
-      }
+    font-size: 20px;
+    background-color: $secondary;
+    .nav-item {
+      .nav-link {
+        padding-inline-end: 0;
       }
     }
-  } 
+  }
+
+  .nav-item {
+    margin-right: 10px; /* Adjust spacing between navbar items */
+    .nav-link {
+      &:hover {
+        @include breakpoint-down(medium) {
+          border-bottom: none;
+        }
+      }
+    }
+  }
 }
-button .navbar-toggler{
-  @include breakpoint-down(small){
-    font-size: 5px;
+
+
+// Navbar toggler button size adjustments for mediumer screens
+button.navbar-toggler {
+  font-size: 15px;
+  @include breakpoint-down(medium) {
+    font-size: 10px; // Adjust as needed
+  }
 }
+.navbar{
+  z-index: 1;
 }
