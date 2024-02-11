@@ -26,7 +26,7 @@ const Navbar = () => {
   };  
   return <>
 <nav className="navbar navbar-expand-lg shadow">
-  <div className="container-fluid align-items-center">
+  <div className="container-fluid align-items-center"style={{overflowX:"hidden"}}>
     <button className="navbar-brand " onClick={()=>navigate('/')}><img className='logo fw-bold' src={navData.logo} alt="" /> <span className='h1 fw-bolder'>{navData.brand}</span> </button>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>

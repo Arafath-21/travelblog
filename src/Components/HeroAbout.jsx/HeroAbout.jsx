@@ -23,7 +23,7 @@ const HeroAbout = () => {
 
   return (
     <>
-      <div className="container padding-inlline">
+      <div className="container padding-inlline" style={{overflowX:"hidden"}}>
         <div className="row">
           <div className="wrappers padding-inline">
             {data && (

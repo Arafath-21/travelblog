@@ -22,7 +22,7 @@ const WhyWeStarted = () => {
   }, []);
 
   return (
-    <div className="container p-0">
+    <div className="container p-0" style={{overflowX:"hidden"}}>
       <div className="imgWrapper">
         <div className="imgWrapper__groupimg">
           <img src={data && data.started.imgUrl} alt="" />

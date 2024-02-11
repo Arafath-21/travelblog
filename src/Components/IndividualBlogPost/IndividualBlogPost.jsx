@@ -70,7 +70,7 @@ function IndividualBlogPost() {
   return (
     <>
       <div className="h1 fw-bolder text-center py-5">Blog-Post</div>
-      <div className="container d-flex justify-content-center align-items-center">
+      <div className="container d-flex justify-content-center align-items-center" style={{overflowX:"hidden"}}>
         {blogPost ? (
           <div className="card p-5 my-5" style={{width:"520px"}}>
             {editMode ? <>

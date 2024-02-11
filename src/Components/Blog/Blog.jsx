@@ -35,7 +35,7 @@ function Blog() {
       ) : error ? (
         <div>{error}</div>
       ) : (
-        <div className="container bg-light px-5 py-5 px-md-5 py-md-5">
+        <div className="container bg-light px-5 py-5 px-md-5 py-md-5" style={{overflowX:"hidden"}}>
           <div className="row">
             <div className="col-md-6">
               <div className="d-flex flex-column my-auto">

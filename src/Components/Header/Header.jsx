@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" style={{overflowX:"hidden"}}>
       <div className="row hero">
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="hero__img w-100" style={{backgroundImage: `url('${heroData.heroImageURL}')`}}></div>

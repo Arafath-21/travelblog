@@ -8,7 +8,7 @@ function Subscribe() {
     toast.success("Subscribed"); // Display toast message
 }
   return (
-    <form className="container bg-white px-5 py-4">
+    <form className="container bg-white px-5 py-4" style={{overflowX:"hidden"}}>
       <div className="row">
         <div className="col-md-7 mb-3 d-flex justify-content-center align-items-center">
           <h1 className="display-4 fw-bold">

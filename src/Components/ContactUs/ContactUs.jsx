@@ -17,7 +17,7 @@ export const ContactUs = () => {
   };
 
   return  (
-    <div className="container">
+    <div className="container" style={{overflowX:"hidden"}}>
       <div className="h1 fw-bolder text-center mt-5">Contact Us</div>
       <div className="row d-flex justify-content-center align-items-center mt-5">
         <div className="col-md-6">

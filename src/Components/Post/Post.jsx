@@ -34,7 +34,7 @@ function Post() {
   }, [selectedFilter, blogs]);
 
   return (
-    <div className="container px-5 py-5 px-md-5 py-md-5">
+    <div className="container px-5 py-5 px-md-5 py-md-5" style={{overflowX:"hidden"}}>
       <div className="row">
         <div className="col-md-12 mb-4">
           <div className="btn-group" role="group">

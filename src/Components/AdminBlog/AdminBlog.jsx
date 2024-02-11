@@ -2,7 +2,7 @@ import React from 'react';
 
 const AdminBlog = () => {
   return <>
-      <div className="container-fluid">
+      <div className="container-fluid" style={{overflowX:"hidden"}}>
         <div className="row">
             <h1 className='my-4 text-center'>Your Ultimate Step-by-Step Guide to Choosing the Perfect Travel Destination</h1>
           <div style={{ height: "520px", overflow: "hidden" }}>
