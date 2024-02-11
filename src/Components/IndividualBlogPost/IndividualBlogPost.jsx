@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate ,useParams } from "react-router-dom";
 import axios from 'axios';
+import { toast } from "react-toastify";
 
 function IndividualBlogPost() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ function IndividualBlogPost() {
       await axios.put(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`, updatedPost);
       setBlogPost(updatedPost);
       setEditMode(false);
-      alert("edited Sucesfully, Redirecting to blog's")
+      alert('Item edited successfully!');
       navigate('/blog-post')
     } catch (error) {
       console.log(error);
@@ -56,12 +57,14 @@ function IndividualBlogPost() {
       if (confirmDelete) {
         await axios.delete(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`);
         // Assuming successful deletion, navigate back to the blog list
+        alert('post deleted')
         navigate('/blog-post');
       }
     } catch (error) {
       console.log(error);
     }
   };
+  
   
   return (
     <>
@@ -94,7 +97,7 @@ function IndividualBlogPost() {
                 <h2 className="mb-3">{blogPost.Title}</h2>
                 {/* Display image */}
                 <img src={imageUrl} className="w-100 mb-3" alt="" />
-                <p>{blogPost.description}</p>
+                  <p>{blogPost.description}</p>
                 <div className="text-small text-muted mb-3">Created On {blogPost.createdAt} </div>
                 <div className="d-flex justify-content-center align-items-center mx-5">
                   <div className="btn btn-primary fw-bolder m-5" onClick={handleEdit}>Edit</div>

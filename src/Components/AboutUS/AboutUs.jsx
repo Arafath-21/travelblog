@@ -1,9 +1,10 @@
-import React,{useState,useEffect} from 'react'
-import axios from 'axios'
-import './_about.scss'
-import Join from '../Join/Join'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './_about.scss';
+import Join from '../Join/Join';
 
 const AboutUs = () => {
+  const [loading, setLoading] = useState(true);
   const [teamDetails, setTeamDetails] = useState([]);
   const [teamData, setteamData] = useState([]);
   const [aboutData, setAboutData] = useState({});
@@ -31,14 +32,14 @@ const AboutUs = () => {
       const missionResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
       setMissionData(missionResponse.data[0].mission);
 
+      setLoading(false); // Set loading to false once all data is fetched
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
   useEffect(() => {
-    
-    fetchData()
+    fetchData();
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
     const animateNumbers = (targetValue, setFunction) => {
       let currentValue = 0;
@@ -71,6 +72,9 @@ const AboutUs = () => {
     setHoveredIndex(index);
   };
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return <>
   <div className="container">

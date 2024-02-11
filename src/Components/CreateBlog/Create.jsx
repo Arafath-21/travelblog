@@ -5,9 +5,9 @@ import BlogCard from '../BlogCard/BlogCard';
 import axios from 'axios';
 import { API_URL } from '../../App';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function LoginSignup({ onLogin, onSignup, isSignup, onToggleSignup }) {
-  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -15,15 +15,23 @@ function LoginSignup({ onLogin, onSignup, isSignup, onToggleSignup }) {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleLogin = () => {
-    onLogin(username, password);
+    onLogin(email, password);
+    setEmail('')
+    setPassword('')
   };
 
   const handleSignup = () => {
     if (password !== confirmPassword) {
-      alert("Passwords don't match");
+      toast.error("Passwords don't match");
       return;
     }
-    onSignup({ username, password, email, firstName, lastName });
+    onSignup({ password, email, firstName, lastName });
+    toast.success('Signed up sucessfully')
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
   };
 
   const handleSubmit = (e) => {
@@ -57,8 +65,8 @@ function LoginSignup({ onLogin, onSignup, isSignup, onToggleSignup }) {
         )}
         {!isSignup && (
           <Form.Group className="mb-3">
-            <Form.Label>Username or Email</Form.Label>
-            <Form.Control type="text" placeholder="Enter username or email" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="text" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </Form.Group>
         )}
         <Form.Group className="mb-3">
@@ -89,20 +97,34 @@ function Create() {
   const [isSignup, setIsSignup] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (username, password) => {
-    if (!username || !password) {
-      alert('Please fill in all required fields');
+  const handleBlogLogin = (email ,password) => {
+    if (!email || !password) {
+      console.log(email,password);
+      toast.error('Please fill in all required fields');
       return;
-    }    
-    console.log('Logged in with username:', username, 'and password:', password);
-    localStorage.setItem('isLoggedIn', true);
-    setIsLoggedIn(true);
+    }
+  
+    const storedEmail = localStorage.getItem('email');
+    const storedPassword = localStorage.getItem('password');
+    const storedUserName = localStorage.getItem('firstName')
+  
+    if (storedEmail === email && storedPassword === password) {
+      localStorage.setItem('isLoggedIn', true);
+      setIsLoggedIn(true);
+      toast.success(`Welcome ${storedUserName}`)
+    } else {
+      toast.error('Incorrect email or password');
+    }
   };
+  
 
-  const handleSignup = ({ username, password, email, firstName, lastName }) => {
-    console.log('Signed up with username:', username, 'password:', password, 'email:', email, 'firstName:', firstName, 'lastName:', lastName);
-    localStorage.setItem('isLoggedIn', true);
-    setIsLoggedIn(true);
+  const handleBlogSignUp = ({ password, email, firstName, lastName }) => {
+    console.log( 'password:', password, 'email:', email, 'firstName:', firstName, 'lastName:', lastName);
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('email',email)
+    localStorage.setItem('password',password)
+    localStorage.setItem('firstName',firstName)
+    setIsSignup(!isSignup);
   };
 
   const handleCreateBlog = async (formData) => {
@@ -111,6 +133,7 @@ function Create() {
       if (res.status === 201) {
         alert('Blog Created Successfully');
         navigate('/blog-post');
+        // localStorage.setItem('isLoggedIn','false')
       }
     } catch (error) {
       console.log(error);
@@ -123,7 +146,7 @@ function Create() {
 
   return (
     <div className="create-wrapper container">
-      {!isLoggedIn && <LoginSignup onLogin={handleLogin} onSignup={handleSignup} isSignup={isSignup} onToggleSignup={onToggleSignup} />}
+      {!isLoggedIn && <LoginSignup onLogin={handleBlogLogin} onSignup={handleBlogSignUp} isSignup={isSignup} onToggleSignup={onToggleSignup} />}
       {isLoggedIn && (
         <div className="form-wrapper">
           <div className="h1 text-center fw-bolder py-5">Create Blog</div>
@@ -138,14 +161,15 @@ function BlogForm({ onSubmit }) {
   const [Title, setTitle] = useState('');
   const [Images, setImages] = useState('');
   const [description, setDescription] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!Title || !description || !Images) {
-      alert('Please fill in all required fields');
+    if (!Title || !description || !Images || !selectedOption) {
+      toast.error('Please fill in all fields');
       return;
     }    
-    onSubmit({ Title, Images, description, status: true });
+    onSubmit({ Title, Images, description, selectedOption, status: true });
   };
 
   return (
@@ -178,13 +202,25 @@ function BlogForm({ onSubmit }) {
             onChange={(e) => setImages(e.target.value)}
           />
         </Form.Group>
+        <Form.Group className="mb-3">
+        <Form.Label>Mode Of the Trip</Form.Label>
+        <Form.Select
+          value={selectedOption}
+          onChange={(e) => setSelectedOption(e.target.value)}
+        >
+          <option value=""></option>
+          <option value="solo">solo</option>
+          <option value="group">group</option>
+          <option value="couples">couple</option>
+        </Form.Select>
+      </Form.Group>
         <Button variant="primary" type="submit">
           Create
         </Button>
       </Form>
       <div className='preview-wrapper'>
         <h3 className='text-center'>Preview</h3>
-        <BlogCard title={Title} image={Images} description={description}/>
+        <BlogCard title={Title} image={Images} description={description} selectedOption={selectedOption}/>
       </div>
     </>
   );

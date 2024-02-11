@@ -14,15 +14,15 @@ const Home = () => {
     setHoveredIndex(index);
   };
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      setTeamDetails(response.data[0].home.teamMembers);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
-        setTeamDetails(response.data[0].home.teamMembers);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
 
     fetchData();
   }, []);
