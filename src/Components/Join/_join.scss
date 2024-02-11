@@ -8,7 +8,7 @@
     // padding: 128px;
     margin: -98px 450px 128px 450px;
     @include breakpoint-down(medium){
-        margin: 0;
+        margin: 0 0 0 15px;
     }
     &-headins{
         color:#232536;
