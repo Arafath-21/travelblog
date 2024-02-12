@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import img from '../../assets/grop.png';
 import './_why.scss';
+import { API_URL2 } from '../../App';
 
 const WhyWeStarted = () => {
   const [data, setData] = useState(null);
@@ -11,7 +11,7 @@ const WhyWeStarted = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+        const response = await axios.get(API_URL2);
         setData(response.data[0]);            
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -22,7 +22,7 @@ const WhyWeStarted = () => {
   }, []);
 
   return (
-    <div className="container p-0" style={{overflowX:"hidden"}}>
+    <div className="container p-0">
       <div className="imgWrapper">
         <div className="imgWrapper__groupimg">
           <img src={data && data.started.imgUrl} alt="" />

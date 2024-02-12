@@ -5,13 +5,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './_listing.scss';
+import { API_URL2 } from '../../App';
 
 const ListingPost = () => {
    const [listDetails, setListDetails] = useState([]);
  
    const fetchData = async () => {
      try {
-       const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+       const response = await axios.get(API_URL2);
        setListDetails(response.data[0].list.post);
      } catch (error) {
        console.error('Error fetching data:', error);

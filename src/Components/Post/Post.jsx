@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from "../../App";
 
 function Post() {
   const [blogs, setBlogs] = useState([]);
@@ -12,7 +12,7 @@ function Post() {
 
   const getBlogs = async () => {
     try {
-      const res = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog');
+      const res = await axios.get(API_URL);
       setBlogs(res.data);
       setFilteredBlogs(res.data); // Initialize filteredBlogs with all blogs
     } catch (error) {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './_header.scss';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_URL2 } from '../../App';
 
 const Header = () => {
   const [heroData, setHeroData] = useState({});
@@ -9,7 +10,7 @@ const Header = () => {
 
   useEffect(() => {
     // Fetch hero data using Axios
-    axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic')
+    axios.get(API_URL2)
       .then(response => {
           setHeroData(response.data[0].hero);
       })

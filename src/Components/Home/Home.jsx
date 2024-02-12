@@ -5,6 +5,7 @@ import HeroAbout from '../HeroAbout.jsx/HeroAbout';
 import WhyWeStarted from '../WhyWeStarted/WhyWeStarted';
 import Join from '../Join/Join';
 import './_home.scss';
+import { API_URL2 } from '../../App';
 
 const Home = () => {
   const [teamDetails, setTeamDetails] = useState([]);
@@ -16,7 +17,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const response = await axios.get(API_URL2);
       setTeamDetails(response.data[0].home.teamMembers);
     } catch (error) {
       console.error('Error fetching data:', error);

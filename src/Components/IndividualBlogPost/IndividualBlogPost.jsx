@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate ,useParams } from "react-router-dom";
 import axios from 'axios';
+import { API_URL } from '../../App';
 
 function IndividualBlogPost() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function IndividualBlogPost() {
   useEffect(() => {
     const fetchBlogPost = async () => {
       try {
-        const res = await axios.get(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`);
+        const res = await axios.get(`${API_URL}/${id}`);
         setBlogPost(res.data);
         setEditedTitle(res.data.Title);
         setEditedContent(res.data.description);
@@ -39,7 +40,7 @@ function IndividualBlogPost() {
   const handleSave = async () => {
     try {
       const updatedPost = { Title: editedTitle, description: editedContent, Image: imageUrl, createdAt: created };
-      await axios.put(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`, updatedPost);
+      await axios.put(`${API_URL}/${id}`, updatedPost);
       setBlogPost(updatedPost);
       setEditMode(false);
       navigate('/blog-post')
@@ -53,7 +54,7 @@ function IndividualBlogPost() {
       // Show confirmation dialog before deleting
       const confirmDelete = window.confirm("Are you sure you want to delete this blog post?");
       if (confirmDelete) {
-        await axios.delete(`https://65927f02bb129707198fc4b4.mockapi.io/TravelBlog/${id}`);
+        await axios.delete(`${API_URL}/${id}`);
         // Assuming successful deletion, navigate back to the blog list=
         navigate('/blog-post');
       }

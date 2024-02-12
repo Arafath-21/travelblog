@@ -8,7 +8,7 @@ const Join = () => {
     navigate('/create-blog')
   }
   return <>
-    <div className="container"style={{overflowX:"hidden"}}>
+    <div className="container"style={{overflow:"hidden"}}>
         <div className="row">
         <div className="joins">
             <div className="joins-headins">Join our team to be a part of our story</div>

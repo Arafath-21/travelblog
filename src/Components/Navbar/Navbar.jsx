@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import './_navbar.scss';
+import { API_URL2 } from '../../App';
 
 const Navbar = () => {
   const  [navData,setNavData] = useState({})
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   const fetchData = async ()=>{
     try {
-      const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const response = await axios.get(API_URL2);
       setNavData(response.data[0].navbar)
     } catch (error) {
       console.error('Error fetching data:', error);

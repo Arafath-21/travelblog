@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './_about.scss';
 import Join from '../Join/Join';
-
+import { API_URL2 } from '../../App';
+import './_about.scss';
 const AboutUs = () => {
   const [loading, setLoading] = useState(true);
   const [teamDetails, setTeamDetails] = useState([]);
@@ -17,19 +17,19 @@ const AboutUs = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const response = await axios.get(API_URL2);
       setTeamDetails(response.data[0].home.teamMembers);
       
-      const teamResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const teamResponse = await axios.get(API_URL2);
       setteamData(teamResponse.data[0].team.teamData);
 
-      const aboutResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const aboutResponse = await axios.get(API_URL2);
       setAboutData(aboutResponse.data[0].about);
 
-      const visionResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const visionResponse = await axios.get(API_URL2);
       setVisionData(visionResponse.data[0].vision);
       
-      const missionResponse = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const missionResponse = await axios.get(API_URL2);
       setMissionData(missionResponse.data[0].mission);
 
       setLoading(false); // Set loading to false once all data is fetched

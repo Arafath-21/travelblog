@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import man from '../../assets/man.png';
 import ListingPost from "../Features/ListingPost";
+import { API_URL2 } from "../../App";
 
 function Blog() {
   const [listDetails, setListDetails] = useState([]);
@@ -11,7 +11,7 @@ function Blog() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://65927f02bb129707198fc4b4.mockapi.io/Dynamic');
+      const response = await axios.get(API_URL2);
       if (response.data && response.data.length > 0) {
         setListDetails(response.data[0].admpost);
       }
